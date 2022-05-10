@@ -4,12 +4,12 @@ import 'package:lets_connect/config/palette.dart';
 import 'package:lets_connect/models/models.dart';
 
 class ProfileAvatar extends StatelessWidget {
-  final User profileAvatar;
+  final User? profileAvatar;
   final bool isActive;
-  final String imageUrl;
+  final String? imageUrl;
   final bool hasBorder;
   const ProfileAvatar({
-    Key key,
+    Key? key,
     this.profileAvatar,
     this.imageUrl,
     this.isActive = false,
@@ -26,7 +26,7 @@ class ProfileAvatar extends StatelessWidget {
             radius: hasBorder ? 17.0 : 20.0,
             backgroundColor: Colors.grey[200],
             backgroundImage:
-                CachedNetworkImageProvider(imageUrl ?? profileAvatar.imageUrl),
+                CachedNetworkImageProvider(imageUrl ?? profileAvatar!.imageUrl),
           ),
         ),
         isActive

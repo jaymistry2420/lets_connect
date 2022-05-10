@@ -12,11 +12,11 @@ class CustomAppBar extends StatelessWidget {
   final Function(int) onTap;
 
   const CustomAppBar({
-    Key key,
-    @required this.currentUser,
-    @required this.icon,
-    @required this.selectedIndex,
-    @required this.onTap,
+    Key? key,
+    required this.currentUser,
+    required this.icon,
+    required this.selectedIndex,
+    required this.onTap,
   }) : super(key: key);
 
   @override

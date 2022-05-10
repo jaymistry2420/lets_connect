@@ -6,8 +6,8 @@ class ContactList extends StatelessWidget {
   final List<User> users;
 
   const ContactList({
-    Key key,
-    @required this.users,
+    Key? key,
+    required this.users,
   }) : super(key: key);
 
   @override

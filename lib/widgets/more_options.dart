@@ -18,8 +18,8 @@ class MoreOptions extends StatelessWidget {
   final User currentUser;
 
   const MoreOptions({
-    Key key,
-    @required this.currentUser,
+    Key? key,
+    required this.currentUser,
   }) : super(key: key);
 
   @override
@@ -56,10 +56,10 @@ class _Option extends StatelessWidget {
   final String label;
 
   const _Option({
-    Key key,
-    @required this.icon,
-    @required this.color,
-    @required this.label,
+    Key? key,
+    required this.icon,
+    required this.color,
+    required this.label,
   }) : super(key: key);
 
   @override

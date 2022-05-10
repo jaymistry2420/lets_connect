@@ -5,7 +5,7 @@ import 'package:lets_connect/widgets/widgets.dart';
 class NewPostContainer extends StatelessWidget {
   final User currentUser;
 
-  const NewPostContainer({Key key, @required this.currentUser})
+  const NewPostContainer({Key? key, required this.currentUser})
       : super(key: key);
 
   @override

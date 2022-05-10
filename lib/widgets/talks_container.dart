@@ -7,8 +7,8 @@ class TalksContainer extends StatelessWidget {
   final List<User> onlineUsers;
 
   const TalksContainer({
-    Key key,
-    @required this.onlineUsers,
+    Key? key,
+    required this.onlineUsers,
   }) : super(key: key);
 
   @override

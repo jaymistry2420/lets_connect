@@ -9,8 +9,8 @@ class PostContainer extends StatelessWidget {
   final Post post;
 
   const PostContainer({
-    Key key,
-    @required this.post,
+    Key? key,
+    required this.post,
   }) : super(key: key);
 
   @override
@@ -22,12 +22,13 @@ class PostContainer extends StatelessWidget {
         vertical: 5.0,
         horizontal: isDesktop ? 5.0 : 0,
       ),
-      elevation: (isDesktop ? 1.0 : 0),
+      elevation: (isDesktop ? 2.0 : 0),
       shape: (isDesktop
-          ? RoundedRectangleBorder(borderRadius: BorderRadius.circular(10.0))
+          ? RoundedRectangleBorder(borderRadius: BorderRadius.all(Radius.circular(10)))
           : null),
       child: Container(
         padding: const EdgeInsets.symmetric(vertical: 8.0),
+        
         color: Colors.white,
         child: Column(
           children: [
@@ -51,7 +52,7 @@ class PostContainer extends StatelessWidget {
                 ? Padding(
                     padding: const EdgeInsets.symmetric(vertical: 8.0),
                     child: CachedNetworkImage(
-                        imageUrl: post.imageUrl,
+                        imageUrl: post.imageUrl!,
                         errorWidget: (context, url, error) =>
                             const Icon(Icons.error),
                         progressIndicatorBuilder: (context, url, progress) =>
@@ -75,8 +76,8 @@ class _PostHeader extends StatelessWidget {
   final Post post;
 
   const _PostHeader({
-    Key key,
-    @required this.post,
+    Key? key,
+    required this.post,
   }) : super(key: key);
 
   @override
@@ -122,8 +123,8 @@ class _PostStates extends StatelessWidget {
   final Post post;
 
   const _PostStates({
-    Key key,
-    @required this.post,
+    Key? key,
+    required this.post,
   }) : super(key: key);
 
   @override
@@ -217,10 +218,10 @@ class _PostButton extends StatelessWidget {
   final Function onTap;
 
   const _PostButton({
-    Key key,
-    @required this.icon,
-    @required this.label,
-    @required this.onTap,
+    Key? key,
+    required this.icon,
+    required this.label,
+    required this.onTap,
   }) : super(key: key);
 
   @override
@@ -229,7 +230,7 @@ class _PostButton extends StatelessWidget {
       child: Material(
         color: Colors.white,
         child: InkWell(
-          onTap: onTap,
+          onTap: onTap as void Function()?,
           child: Container(
             padding: const EdgeInsets.symmetric(horizontal: 12.0),
             height: 25.0,
